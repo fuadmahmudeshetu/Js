@@ -10,6 +10,8 @@
 
 // for loop
 
-for(let counter=1; counter<=15;counter+=1){
+for(let counter=1; counter<=15;counter+=5){
     console.log(counter);
 }
+
+console.log("Happy new year");
