@@ -10,4 +10,6 @@
 
 // for loop
 
-
+for(let counter=1; counter<=15;counter+=1){
+    console.log(counter);
+}
