@@ -4,8 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-    
+        {
+            "type": "java",
+            "name": "Love",
+            "request": "launch",
+            "mainClass": "Love",
+            "projectName": "Js Practice_1b05b618"
+        },
         {
             "type": "chrome",
             "request": "launch",
