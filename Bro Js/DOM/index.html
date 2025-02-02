@@ -7,26 +7,111 @@
     
 </head>
 <body>
-    
-    <h2 id="header">This is the menu</h2>
-    <input type="radio" name="fruits" value="apple">
-    <label for="apple">Apple</label><br>
-    <input type="radio" name="fruits" value="mango" checked="checked">
-    <label for="mango">Mango</label><br>
-    <input type="radio" name="fruits" value="banana">
-    <label for="banana">Banana</label>
+    <!-- <p><label >First Name <input type="text" name="fname" id=""></label></p>
+    <p><label >Last Name <input type="text" name="lname" id=""></label></p>
+    <button type="button" onclick="getValues()">Submit</button>
 
-    <ul>
-        <li>Onions</li>
-        <li>Potatoes</li>
-        <li>Carrots</li>
-    </ul>
+    <script>
+        function getValues(){
+            var firstname = document.getElementsByName("fname")[0].value;
+            var lasttname = document.getElementsByName("lname")[0].value;
 
-    <div class="container">Ice cream</div>
-    <div class="container">Cake</div>
-    <div class="container">Pizza</div>
-    <div class="container">Burger</div>
+            alert("Your Full Name is "+firstname +" "+lasttname);
+
+        }
+
+
+    </script> -->
+
+
+    <button id="btn">click me </button>
 
     <script src="index.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        table { width: 50%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        .dropdown { margin-top: 10px; }
+        input { width: 80px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>Order Form</h2>
+    <table>
+        <tr>
+            <th>Qty</th>
+            <th>Stock#</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="qty1" value="3"></td>
+            <td>8088</td>
+            <td>Gizmo, blue, medium</td>
+            <td><input type="number" id="price1" value="11.88"></td>
+            <td id="total1">35.64</td>
+        </tr>
+        <tr>
+            <td><input type="number" id="qty2" value="1"></td>
+            <td>3001</td>
+            <td>Widget, long</td>
+            <td><input type="number" id="price2" value="24.76"></td>
+            <td id="total2">24.76</td>
+        </tr>
+    </table>
+
+    <div class="dropdown">
+        <label for="discount">Select Discount: </label>
+        <select id="discount">
+            <option value="0">00%</option>
+            <option value="25">25%</option>
+            <option value="50">50%</option>
+            <option value="75">75%</option>
+        </select>
+    </div>
+
+    <p>Subtotal: <span id="subtotal">60.40</span></p>
+    <p>Sales Tax: <span id="tax">4.83</span></p>
+    <p>Shipping: <span id="shipping">0.00</span></p>
+    <p>Total: <span id="grandTotal">65.23</span></p>
+
+    <script>
+        function calculateTotals() {
+            let qty1 = parseFloat(document.getElementById("qty1").value) || 0;
+            let price1 = parseFloat(document.getElementById("price1").value) || 0;
+            let qty2 = parseFloat(document.getElementById("qty2").value) || 0;
+            let price2 = parseFloat(document.getElementById("price2").value) || 0;
+            
+            let total1 = qty1 * price1;
+            let total2 = qty2 * price2;
+            
+            document.getElementById("total1").innerText = total1.toFixed(2);
+            document.getElementById("total2").innerText = total2.toFixed(2);
+            
+            let subtotal = total1 + total2;
+            let discount = parseFloat(document.getElementById("discount").value) / 100;
+            let discountedTotal = subtotal * (1 - discount);
+            let tax = discountedTotal * 0.08; // Assuming 8% sales tax
+            let shipping = 0.00;
+            let grandTotal = discountedTotal + tax + shipping;
+            
+            document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+            document.getElementById("tax").innerText = tax.toFixed(2);
+            document.getElementById("grandTotal").innerText = grandTotal.toFixed(2);
+        }
+        
+        document.getElementById("qty1").addEventListener("input", calculateTotals);
+        document.getElementById("price1").addEventListener("input", calculateTotals);
+        document.getElementById("qty2").addEventListener("input", calculateTotals);
+        document.getElementById("price2").addEventListener("input", calculateTotals);
+        document.getElementById("discount").addEventListener("change", calculateTotals);
+    </script>
 </body>
 </html>
