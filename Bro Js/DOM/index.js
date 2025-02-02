@@ -49,4 +49,12 @@ elements.forEach(fuad => {
 });
 */
 
+// let add = (a,b)=>(a+b);
 
+// console.log(add(4,10));
+ 
+var yo= document.getElementById('btn');
+
+yo.onclick= function(){
+    alert("motherfer what are you doing here?")
+}
