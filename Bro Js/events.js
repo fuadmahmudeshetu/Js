@@ -35,7 +35,6 @@ function lightMode(){
     bodyPart.style.backgroundColor = "white";
 }
 
-
 /* .addEventListener(event, function, useCapture)
     you can add many event handler to one element
     even the same event that that invoke different function
