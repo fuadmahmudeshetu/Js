@@ -1,0 +1,12 @@
+/* #myImage{
+            margin-top: 20px;
+            width: 300px;
+            display: block;
+        } */
+
+#myDiv {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}

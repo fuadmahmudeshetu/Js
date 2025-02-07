@@ -48,10 +48,14 @@ innerDiv.addEventListener("click", changeRed);
 outerDiv.addEventListener("click", changeRed);
 
 function changeRed(){
+    alert(`you selected ${this.id}`);
    this.style.backgroundColor = "red";
 }
 
 function changeGreen(){
-    alert(`you selected ${this.id}`);
     element.style.backgroundColor = "lightgreen";
+}
+
+function onClick(){
+    
 }
