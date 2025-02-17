@@ -4,9 +4,12 @@
             display: block;
         } */
 
-#myDiv {
-    background-color: orangered;
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
+#myCanvas {
+    border: 2px solid black;
+}
+#circle {
+    border: 2px solid black;
+}
+#text {
+    border: 2px solid black;
 }
