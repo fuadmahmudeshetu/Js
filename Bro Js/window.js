@@ -7,4 +7,4 @@
 // console.log(window.scrollY);
 
 console.log(window.location.href);
-window.location.href = "https://xnxx.com";
+window.location.href = "https://google.com";
